@@ -1,11 +1,14 @@
 import React from "react";
-import FitnessClubRegistrationForm from "./src/FitnessClubRegistrationForm";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import FitnessClubRegistrationForm from "./FitnessClubRegistrationForm";
+import MemberList from "./MemberList";
 
 function App() {
   return (
-    <div className="App">
-      <FitnessClubRegistrationForm />
-    </div>
+    <Router>
+      <Route exact path="/" component={FitnessClubRegistrationForm} />
+      <Route path="/members" component={MemberList} />
+    </Router>
   );
 }
 

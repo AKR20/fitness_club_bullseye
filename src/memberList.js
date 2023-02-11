@@ -1,22 +1,28 @@
-import React from 'react';
+import React from "react";
 
-const MemberList = () => (
-  <div>
-    <h1>Member List</h1>
+function MemberList({ members }) {
+  return (
     <table>
       <thead>
         <tr>
           <th>Name</th>
           <th>Email</th>
-          <th>Phone Number</th>
+          <th>Phone</th>
           <th>Address</th>
         </tr>
       </thead>
       <tbody>
-        {/* Add code to display the members here */}
+        {members.map((member, index) => (
+          <tr key={index}>
+            <td>{member.name}</td>
+            <td>{member.email}</td>
+            <td>{member.phone}</td>
+            <td>{member.address}</td>
+          </tr>
+        ))}
       </tbody>
     </table>
-  </div>
-);
+  );
+};
 
 export default MemberList;

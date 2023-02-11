@@ -40,28 +40,36 @@
 body {
   font-family: Arial, sans-serif;
   text-align: center;
+  background-color: rgba(17, 17, 10, 0.744);
+  background-image: url("https://t4.ftcdn.net/jpg/01/13/65/71/360_F_113657105_Bktota7BzQ5cEUcZb4l0D4qSD2Sw08P2.jpg");
+  background-blend-mode: color-burn;
+  background-size: cover;
 }
 
 h1.fitness-club-registration {
   text-align: center;
+  font-style: var(-webkit-text-fill-color);
   font-size: 48px;
   font-weight: bold;
+  color: rgb(35, 190, 7);
   margin: 40px 0px;
   margin-bottom: 10px;
-  text-shadow: 1px 1px 3px #333;
-  background-image: linear-gradient(to right, #8e2de2, #4a00e0);
+  text-shadow: 1px 1px 3px hsl(0, 0%, 3%);
+  background-image: linear-gradient(to right, #7807ea, #6666e1);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  /* -webkit-text-fill-color: transparent; */
 }
 
 
 
 form {
   display: inline-block;
+  background-color: aliceblue;
+  opacity: 70%;
   text-align: left;
   padding: 50px;
   box-shadow: 0 0 10px lightgray;
-  border-radius: 10px;
+  border-radius: 25px;
   margin-top: 50px;
   width: 30%;
 }
@@ -74,7 +82,7 @@ input {
   padding: 10px;
   font-size: 16px;
   box-shadow: 0 0 5px lightgray;
-  border-radius: 5px;
+  border-radius: 20px;
 }
 
 /* button {
@@ -99,37 +107,47 @@ button.add-member {
   color: white;
   font-size: 18px;
   border: none;
-  border-radius: 5px;
+  border-radius: 20px;
   box-shadow: 0 0 5px darkgreen;
   cursor: grab;
-  margin-left: 25%;
+  margin-left: 22%;
   margin-top: 7%;
 }
 
 button.view-member-list {
-  width: 80%;
+  width: 70%;
   height: 40px;
-  background-color: blue;
+  background-color: rgb(4, 97, 168);
   color: white;
   font-size: 18px;
   border: none;
-  border-radius: 5px;
-  box-shadow: 0 0 5px darkblue;
+  border-radius: 20px;
+  box-shadow: 0 0 5px rgb(109, 109, 224);
   cursor: pointer;
   margin-top: 1%;
 }
 
 .success-message {
+  width:40%;
+  margin-left: 29%;
   margin-top: 20px;
   font-size: 18px;
-  color: green;
+  color: rgb(2, 67, 2);
+  background-color: antiquewhite;
+  font-style: bold;
+  border-radius: 10px;
+  padding: 10px;
 }
 
 table {
-  margin-top: 50px;
+  margin: auto;
+  margin-top: 10px;
   width: 80%;
   border-collapse: collapse;
   text-align: center;
+  background-color: white;
+  opacity: 75%;
+  
 }
 
 th,

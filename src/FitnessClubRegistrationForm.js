@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
+import { Route, Link, BrowserRouter as Router } from "react-router-dom";
+import MemberList from "./MemberList"
 
 function FitnessClubRegistrationForm() {
   const [members, setMembers] = useState([]);
@@ -12,6 +14,10 @@ function FitnessClubRegistrationForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    if (!name || !email || !phone || !address) {
+        alert("All fields are mandatory !");
+        return;
+    }
     setMembers([...members, { name, email, phone, address }]);
     setName("");
     setEmail("");
@@ -20,12 +26,21 @@ function FitnessClubRegistrationForm() {
     setShowSuccessMessage(true);
     setTimeout(() => {
       setShowSuccessMessage(false);
-    }, 5000);
+    }, 10000);
+  };
+  const handleClick = () => {
+    setShowMembers(!showMembers);
+    if (showMembers) {
+      const table = document.querySelector("#member-table");
+      if (table) {
+        table.scrollIntoView({ behavior: "smooth" });
+      }
+    }
   };
 
   return (
     <div className="App">
-        <h1>Fitness Club Registration</h1>
+        <h1 class="fitness-club-registration">FITNESS CLUB REGISTRATION</h1>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -56,7 +71,7 @@ function FitnessClubRegistrationForm() {
       {showSuccessMessage && (
         <div className="success-message">User added successfully!</div>
       )}
-      <button class="view-member-list" onClick={() => setShowMembers(!showMembers)}>
+      <button class="view-member-list" onClick={handleClick}>
         View Member List
       </button>
       {showMembers && (
@@ -82,7 +97,9 @@ function FitnessClubRegistrationForm() {
         </table>
       )}
     </div>
+
   );
+
 }
 
 export default FitnessClubRegistrationForm;
